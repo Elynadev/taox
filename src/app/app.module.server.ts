@@ -4,9 +4,10 @@ import { provideServerRoutesConfig } from '@angular/ssr';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { serverRoutes } from './app.routes.server';
+import { HttpClientModule } from '@angular/common/http'; // Importer HttpClientModule
 
 @NgModule({
-  imports: [AppModule, ServerModule],
+  imports: [AppModule, ServerModule,   HttpClientModule,],
   providers: [provideServerRoutesConfig(serverRoutes)],
   bootstrap: [AppComponent],
 })

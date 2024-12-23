@@ -1,0 +1,89 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-xs">
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 class="text-center text-2xl font-bold mb-4">Créer un uutilisateur</h2>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+          Username
+        </label>
+        <input
+          id="username"
+          formControlName="username"
+          type="text"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Username" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email
+        </label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Email" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Password" />
+      </div>
+
+      <!-- <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">
+          First Name
+        </label>
+        <input
+          id="firstName"
+          formControlName="firstName"
+          type="text"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="First Name" />
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName">
+          Last Name
+        </label>
+        <input
+          id="lastName"
+          formControlName="lastName"
+          type="text"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Last Name" />
+      </div> -->
+<div>
+
+  <label class="block text-sm font-medium text-gray-700">Rôle:</label>
+      <select formControlName="role" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded" required>
+          <option value="" disabled selected>Choisir un rôle</option>
+          <option value="user">Utilisateur</option>
+          <option value="admin">Admin</option>
+          <option value="super-admin">Super Admin</option>
+      </select>
+
+</div>
+
+
+
+      <div class="flex items-center justify-between">
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          [disabled]="createUserForm.invalid">
+          Create User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
